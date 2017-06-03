@@ -6,9 +6,11 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onGetStarwars = (event) => {
-  api.getStarWars()
-    .then(ui.getStarWars)
-    .catch(ui.getStarWarsFail)
+  for (let pageNumber = 1; pageNumber < 810; pageNumber += 20) {
+    api.getStarWars(pageNumber)
+      .then(ui.getStarWars)
+      .catch(ui.getStarWarsFail)
+  }
 }
 
 const addPageHandlers = () => {

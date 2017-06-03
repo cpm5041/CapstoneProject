@@ -9,9 +9,9 @@ const getStarWars = (data) => {
   const showPplHtml = showCh({
     characters: data.results
   })
-  $('#fail').html(showPplHtml)
+  $('#success').append(showPplHtml)
   // clear values in fields
-  $('#success').html(data.results[1].name)
+  // $('#success').html(data.results[1].name)
   console.log(data.results[1].name)
 }
 
