@@ -1,0 +1,9 @@
+<ul>
+  {{#each characters as |character|}}
+    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} hbStyle col-md-12 updatedWk list-unstyled text-center'>
+      <h1> {{character.name}}</h1>
+      <hr>
+    </li>
+  {{/each}}
+
+</ul>
