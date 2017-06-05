@@ -6,7 +6,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onGetStarwars = (event) => {
-  for (let pageNumber = 1; pageNumber < 810; pageNumber += 20) {
+  for (let pageNumber = 0; pageNumber < 810; pageNumber += 20) {
     api.getStarWars(pageNumber)
       .then(ui.getStarWars)
       .catch(ui.getStarWarsFail)
