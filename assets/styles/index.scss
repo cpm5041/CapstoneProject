@@ -1,10 +1,20 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url(https://fonts.googleapis.com/css?family=Kalam);
 
 .alert {
   font-family: sans-serif;
 }
-
+body {
+  font-family: 'Kalam', cursive;
+  // background-image: url('http://www.planwallpaper.com/static/images/nature_backgrounds_best_version_pictures_7014.jpg');
+  background-image: url('https://www.heritagelawnskc.com/wp-content/uploads/2014/03/Green-Lawn-1-YI25ANCA73-1600x1200.jpg');
+  background-attachment: fixed;
+}
 .hidden{
   display: none;
+}
+.petImage {
+  height: 300px;
+  width: 300px;
 }

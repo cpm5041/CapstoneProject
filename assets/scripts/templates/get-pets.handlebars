@@ -6,12 +6,47 @@
       <p>Breed: {{pet.breed}}</p>
       <p>Birthday: {{pet.bornOn}}</p>
       <p>Gender: {{pet.gender}}</p>
-      <img src={{pet.image}} class='petImage' alt="Image not found"></img>
+      {{#if pet.image}}
+      <img src= {{pet.image}} class='petImage' alt="Image not found"></img>
+      {{/if}}
       <!-- Delete Comments -->
       <br>
       <button type="button" class="removePet remove-pet btn btn-default handle" data-id="{{pet.id}}">Remove Pet</button>
-      <button type="button" class="updatePet btn btn-primary handle" data-toggle="modal" data-target="#updatepetmodal{{post.id}}">Update Pet Info</button>
+      <button type="button" class="updatePet btn btn-primary handle" data-toggle="modal" data-target="#updatepetmodal{{pet.id}}">Update Pet Info</button>
 
+      <div class="modal fade update-pet-modal" id="updatepetmodal{{pet.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Update Pet Info</h5>
+            </div>
+            <div class="modal-body" data-id="{{pet.id}}">
+              <form class="update-pet" data-id="{{pet.id}}">
+                <fieldset>
+                  <input type='text' id="NameUpdateForm" name='pet[name]' placeholder='{{pet.name}}'></input>
+                  <br>
+                  <input type='text' id="SpeciesUpdateForm" name='pet[species]' placeholder='Enter Species'></input>
+                  <br>
+                  <input type='text' id="BreedUpdateForm" name='pet[breed]' placeholder='Enter Breed'></input>
+                  <br>
+                  <input type='text' id="ImageUpdateForm" name='pet[image]' placeholder='Enter Image'></input>
+                  <br>
+                  <input type='text' id="bornOnUpdateForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)'></input>
+                  <br>
+                  <input type='text' id="GenderUpdateForm" name='pet[gender]' placeholder='Enter Gender'></input>
+                  <br>
+                  <p class="textarea-notes">*NOTE: Pets.</p>
+                  <input data-id="{{pet.id}}" type="submit" name="submit" value="Update Pet">
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div class="updateerror"></div>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <hr>
     </li>
   {{/each}}

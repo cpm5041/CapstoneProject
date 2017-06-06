@@ -46,8 +46,12 @@ const removePetFail = (data) => {
 }
 
 const updatePetsSuccess = (data) => {
+  console.log('update worked')
+  console.log('data', data)
+  $('.update-pet-modal').modal('toggle')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
+  console.log('modal backdrop ran')
   $('#success-page-update-alert').alert()
   $('#success-page-update-alert').fadeTo(1500, 500).slideUp(500, () => {
     $('#success-page-update-alert').slideUp(500)
@@ -55,7 +59,8 @@ const updatePetsSuccess = (data) => {
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
-const updateCurrentUserPagesFail = (data) => {
+const updatePetsFail = (data) => {
+  console.log('update dunt worked')
   $('#fail-page-update-alert').alert()
   $('#fail-page-update-alert').fadeTo(1500, 500).slideUp(500, () => {
     $('#fail-page-update-alert').slideUp(500)
@@ -88,7 +93,7 @@ module.exports = {
   getPetsFailure,
   removePetFail,
   updatePetsSuccess,
-  updateCurrentUserPagesFail,
+  updatePetsFail,
   removePetSuccess,
   getOthersPagesSuccess
 }

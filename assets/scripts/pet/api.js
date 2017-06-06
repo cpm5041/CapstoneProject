@@ -34,9 +34,9 @@ const getCurrentUserPages = function () {
   })
 }
 
-const updateCurrentUserPages = (pageId, data) => {
+const updatePets = (petId, data) => {
   return $.ajax({
-    url: config.apiOrigin + '/pages/' + pageId,
+    url: config.apiOrigin + '/pets/' + petId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -59,6 +59,6 @@ module.exports = {
   createPet,
   getPets,
   getCurrentUserPages,
-  updateCurrentUserPages,
+  updatePets,
   removePet
 }
