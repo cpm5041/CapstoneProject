@@ -1,0 +1,19 @@
+<ul>
+  {{#each pets as |pet|}}
+    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} hbStyle col-md-12 list-unstyled text-center'>
+      <h2>Name: {{pet.name}}</h2>
+      <p>Species: {{pet.species}}</p>
+      <p>Breed: {{pet.breed}}</p>
+      <p>Birthday: {{pet.bornOn}}</p>
+      <p>Gender: {{pet.gender}}</p>
+      <img src={{pet.image}} class='petImage' alt="Image not found"></img>
+      <!-- Delete Comments -->
+      <br>
+      <button type="button" class="removePet remove-pet btn btn-default handle" data-id="{{pet.id}}">Remove Pet</button>
+      <button type="button" class="updatePet btn btn-primary handle" data-toggle="modal" data-target="#updatepetmodal{{post.id}}">Update Pet Info</button>
+
+      <hr>
+    </li>
+  {{/each}}
+
+</ul>

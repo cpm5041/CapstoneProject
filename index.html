@@ -15,40 +15,42 @@
 
 <body class="container-fluid">
   <!-- BEGIN NAV BAR -->
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse hidden user-view">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse hidden user-view">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <div class="navbar-brand brand-title">Puppies!</div>
+        <div class="navbar-brand brand-title">Puppies!</div>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="blogActions nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Your Account <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li id="sign-out" class="in-session-auth authentication"><a href="#">Sign Out</a></li>
+              <li><a href="#" data-toggle="modal" id="change-password-modal-link" data-target="#change-password-modal">Change Password</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-      </ul>
-      <ul class="blogActions nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Your Account <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li id="sign-out" class="in-session-auth authentication"><a href="#">Sign Out</a></li>
-            <li><a href="#" data-toggle="modal" id="change-password-modal-link" data-target="#change-password-modal">Change Password</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container-fluid -->
-</nav>
-<!-- END NAV BAR -->
+    <!-- /.container-fluid -->
+  </nav>
+  <!-- END NAV BAR -->
   <!-- Welcome  Div -->
   <div class="container">
     <!-- BEGIN JUMBOTRON -->
+    <br>
+    <br>
     <div class="jumbotron splash-jumbo visitor-view">
       <h1 class="display-3 expecto-jumbo-text">Puppies!</h1>
       <p class="lead"></p>
@@ -59,41 +61,42 @@
     <!-- END JUMBOTRON -->
     <!-- END Visitor Div -->
   </div>
-
-  <br>
-  <br>
-  <br>
-  <h1>Pet Adoption Site</h1>
-
-  <p>Puppies.</p>
-  <!-- User Div -->
-  <div class="container userDiv">
+  <div class='container signedInDiv' style='display:none'>
     <br>
-    <!-- BEGIN USER FEEDBACK ALERTS -->
-    <div class='userFeedback col-md-12 user-view alerts-container'>
+    <br>
+    <br>
+    <h1>Pet Adoption Site</h1>
 
-      <!-- BLOG CREATE SUCCESS -->
-      <div class="alert alert-success alert-fixed-top hidden create-success" id="success-pet-create-alert" role="alert">
-        <strong>Success!</strong> Pet Added.
+    <p>Puppies.</p>
+    <!-- User Div -->
+    <div class="container userDiv">
+      <br>
+      <!-- BEGIN USER FEEDBACK ALERTS -->
+      <div class='userFeedback col-md-12 user-view alerts-container'>
+
+        <!-- BLOG CREATE SUCCESS -->
+        <div class="alert alert-success alert-fixed-top hidden create-success" id="success-pet-create-alert" role="alert">
+          <strong>Success!</strong> Pet Added.
+        </div>
       </div>
     </div>
+    <div class='getPuppyForm'>
+      <form id="getPuppyForm" class="comment updateComment signedInComment">
+        <fieldset>
+          <input type='text' id="NameForm" name='pet[name]' placeholder='Enter Name!'></input>
+          <input type='text' id="SpeciesForm" name='pet[species]' placeholder='Enter Species'></input>
+          <input type='text' id="BreedForm" name='pet[breed]' placeholder='Enter Breed'></input>
+          <input type='text' id="ImageForm" name='pet[image]' placeholder='Enter Image'></input>
+          <input type='text' id="bornOnForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)'></input>
+          <input type='text' id="GenderForm" name='pet[gender]' placeholder='Enter Gender'></input>
+          <button id="CreatePetButton" type="submit" role="button" class="btn btn-primary CreatePetButton">Create Pet!</button>
+        </fieldset>
+      </form>
+    </div>
+    <button id='showPetsButton' type="button" class="getPetsButton btn btn-primary">See your pets!</button>
+    <div id='getPetHbDiv' class='container'>
+    </div>
   </div>
-  <div  class='getPuppyForm'>
-    <form id="getPuppyForm" class="comment updateComment signedInComment">
-      <fieldset>
-        <input type='text' id="NameForm" name='pet[name]' placeholder='Enter Name!'></input>
-        <input type='text' id="SpeciesForm" name='pet[species]' placeholder='Enter Species'></input>
-        <input type='text' id="BreedForm" name='pet[breed]' placeholder='Enter Breed'></input>
-        <input type='text' id="ImageForm" name='pet[image]' placeholder='Enter Image'></input>
-        <input type='text' id="bornOnForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)'></input>
-        <input type='text' id="GenderOnForm" name='pet[gender]' placeholder='Enter Gender'></input>
-        <button id="CreatePetButton" type="submit" role="button" class="btn btn-primary CreatePetButton">Create Pet!</button>
-      </fieldset>
-    </form>
-    <div id='success'></div>
-    <div id='fail'></div>
-  </div>
-
   <!-- Sign-in Modal -->
   <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
     <div class="modal-dialog modal-sm">

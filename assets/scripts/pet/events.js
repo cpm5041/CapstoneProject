@@ -43,17 +43,41 @@ const onCreatePet = function (event) {
   // }
 }
 
-const onGetPages = (event) => {
-  api.getPages()
-    .then(ui.getPagesSuccess)
-    .catch(ui.getPagesfailure)
+const onGetPets = (event) => {
+  api.getPets()
+    .then(ui.getPetsSuccess)
+    .catch(ui.getPetsfailure)
 }
-
+const onRemovePet = function () {
+  event.preventDefault()
+  console.log('remove pet clicked')
+  const data = $(this).attr('data-id')
+  api.removePet(data)
+    .then(ui.removePetSuccess)
+    .catch(ui.removePetFail)
+    .done(onGetPets)
+}
+const onUpdatePet = function (event) {
+  event.preventDefault()
+  // assign input form fields to data
+  const data = getFormFields(event.target)
+    // use id to update that page id
+  const petId = $(this).attr('data-id')
+  api.updatePets(petId, data)
+      .then(ui.updatePetSuccess)
+      .catch(ui.updatePetFail)
+      .done(onGetPets)
+}
 const addPetHandlers = () => {
   $('#getPuppyForm').on('submit', onCreatePet)
+  $('#showPetsButton').on('click', onGetPets)
+  $(document).on('click', '.removePet', onRemovePet)
+  $(document).on('click', '.updatePet', onUpdatePet)
 }
 module.exports = {
   onCreatePet,
-  onGetPages,
-  addPetHandlers
+  addPetHandlers,
+  onGetPets,
+  onRemovePet,
+  onUpdatePet
 }

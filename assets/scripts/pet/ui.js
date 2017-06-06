@@ -3,7 +3,7 @@
 // const store = require('../store')
 // const api = require('./api')
 // const showItemsTemplate = require('../templates/item-listing-grid.handlebars')
-// const showPageTemplate = require('../templates/page-listing.handlebars')
+const showPetsTemplate = require('../templates/get-pets.handlebars')
 
 const createPetSuccess = (data) => {
   // clear values in fields
@@ -30,28 +30,22 @@ const createPetFailure = () => {
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
-const getPagesSuccess = (data) => {
-  const showPagesHtml = showOthersPages({
-    pages: data.pages
+const getPetsSuccess = (data) => {
+  const showPetsHtml = showPetsTemplate({
+    pets: data.pets
   })
-  $('.visitorPageDiv').html(showPagesHtml)
+  $('#getPetHbDiv').html(showPetsHtml)
+  console.log('get pets success')
+}
+const getPetsFailure = (data) => {
+  console.log('shit didnt work')
 }
 
-const getCurrentUserPagesSuccess = (data) => {
-  if (data.pages.length === 0) {
-    $('#userHandlebarBody-page').html('You have not published any pages')
-  } else {
-    const showUserPagesHtml = showUserPages({
-      pages: data.pages
-    })
-    $('#userHandlebarBody-page').html(showUserPagesHtml)
-  }
+const removePetFail = (data) => {
+  console.log('dun work')
 }
 
-const getCurrentUserPagesFail = (data) => {
-}
-
-const updateCurrentUserPagesSuccess = (data) => {
+const updatePetsSuccess = (data) => {
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   $('#success-page-update-alert').alert()
@@ -69,7 +63,8 @@ const updateCurrentUserPagesFail = (data) => {
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
-const deleteCurrentUserPagesSuccess = (data) => {
+const removePetSuccess = (data) => {
+  console.log('removed pet,', data)
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   $('.page-delete-alert-success').alert()
@@ -89,11 +84,11 @@ const getOthersPagesSuccess = (data) => {
 module.exports = {
   createPetSuccess,
   createPetFailure,
-  getPagesSuccess,
-  getCurrentUserPagesSuccess,
-  getCurrentUserPagesFail,
-  updateCurrentUserPagesSuccess,
+  getPetsSuccess,
+  getPetsFailure,
+  removePetFail,
+  updatePetsSuccess,
   updateCurrentUserPagesFail,
-  deleteCurrentUserPagesSuccess,
+  removePetSuccess,
   getOthersPagesSuccess
 }

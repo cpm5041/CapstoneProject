@@ -48,6 +48,7 @@ const signInSuccess = (data) => {
   $('.visitor-view').addClass('hidden')
   $('.user-view').removeClass('hidden')
   $('.signedInComment').removeClass('hidden')
+  $('.signedInDiv').css('display', 'block')
 }
 
 const signInFailure = (error) => {
@@ -77,6 +78,7 @@ const signOutSuccess = () => {
   $('#blogCreateForm').trigger('reset')
   $('#create-page-form').trigger('reset')
   $('.signedInComment').addClass('hidden')
+  $('.signedInDiv').css('display', 'none')
 }
 
 const signOutFailure = (error) => {

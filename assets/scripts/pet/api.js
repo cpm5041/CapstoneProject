@@ -14,10 +14,13 @@ const createPet = (data) => {
   })
 }
 
-const getPages = function () {
+const getPets = function () {
   return $.ajax({
-    url: config.apiOrigin + '/pages', // "http://book-json.herokuconfig.com/books"
-    method: 'GET'
+    url: config.apiOrigin + '/pets',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -42,9 +45,9 @@ const updateCurrentUserPages = (pageId, data) => {
   })
 }
 
-const deleteCurrentUserPages = (data) => {
+const removePet = (data) => {
   return $.ajax({
-    url: config.apiOrigin + '/pages/' + data,
+    url: config.apiOrigin + '/pets/' + data,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -54,8 +57,8 @@ const deleteCurrentUserPages = (data) => {
 
 module.exports = {
   createPet,
-  getPages,
+  getPets,
   getCurrentUserPages,
   updateCurrentUserPages,
-  deleteCurrentUserPages
+  removePet
 }
