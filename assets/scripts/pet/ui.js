@@ -28,10 +28,16 @@ const createPetFailure = () => {
 }
 
 const getPetsSuccess = (data) => {
-  const showPetsHtml = showPetsTemplate({
-    pets: data.pets
-  })
-  $('#getPetHbDiv').html(showPetsHtml)
+  // if logic to handle showing a message to the user if they have posted no blogs
+  if (data.pets.length === 0) {
+    $('#getPetHbDiv').html('You have not added any pets!')
+    // else condition to show blogs
+  } else {
+    const showPetsHtml = showPetsTemplate({
+      pets: data.pets
+    })
+    $('#getPetHbDiv').html(showPetsHtml)
+  }
 }
 const getPetsFailure = (data) => {
 }
