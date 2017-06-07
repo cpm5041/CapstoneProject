@@ -23,7 +23,7 @@
             <div class="modal-body" data-id="{{pet.id}}">
               <form class="update-pet" data-id="{{pet.id}}">
                 <fieldset>
-                  <input type='text' id="NameUpdateForm" name='pet[name]' placeholder='{{pet.name}}'></input>
+                  <input type='text' id="NameUpdateForm" name='pet[name]' placeholder='Enter Name'></input>
                   <br>
                   <input type='text' id="SpeciesUpdateForm" name='pet[species]' placeholder='Enter Species'></input>
                   <br>
@@ -31,10 +31,16 @@
                   <br>
                   <input type='text' id="ImageUpdateForm" name='pet[image]' placeholder='Enter Image'></input>
                   <br>
-                  <input type='text' id="bornOnUpdateForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)'></input>
+                  <input type='date' id="bornOnUpdateForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)'></input>
                   <br>
-                  <input type='text' id="GenderUpdateForm" name='pet[gender]' placeholder='Enter Gender'></input>
+                  <label for="gender">Choose Gender</label>
+                  <select id="GenderUpdateForm" name='pet[gender]' name='gender'>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+
+                  </select>
                   <br>
+
                   <p class="textarea-notes">*NOTE: Pets.</p>
                   <input data-id="{{pet.id}}" type="submit" name="submit" value="Update Pet">
                 </fieldset>

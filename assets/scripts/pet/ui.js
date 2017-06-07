@@ -12,9 +12,6 @@ const createPetSuccess = (data) => {
   $('#SpeciesForm').val('')
   $('#ImageForm').val('')
   $('#bornOnForm').val('')
-  $('#GenderForm').val('')
-
-  $('#create-pet-template').val('defaultTemplate')
   $('#success-pet-create-alert').alert()
   $('#success-pet-create-alert').fadeTo(1500, 500).slideUp(500, () => {
     $('#success-pet-create-alert').slideUp(500)
@@ -23,9 +20,9 @@ const createPetSuccess = (data) => {
 }
 
 const createPetFailure = () => {
-  $('#fail-page-create-alert').alert()
-  $('#fail-page-create-alert').fadeTo(1500, 500).slideUp(500, () => {
-    $('#fail-page-create-alert').slideUp(500)
+  $('#fail-pet-create-alert').alert()
+  $('#fail-pet-create-alert').fadeTo(1500, 500).slideUp(500, () => {
+    $('#fail-pet-create-alert').slideUp(500)
   })
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
@@ -34,6 +31,7 @@ const getPetsSuccess = (data) => {
   const showPetsHtml = showPetsTemplate({
     pets: data.pets
   })
+  console.log('data', data)
   $('#getPetHbDiv').html(showPetsHtml)
   console.log('get pets success')
 }
@@ -52,18 +50,18 @@ const updatePetsSuccess = (data) => {
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   console.log('modal backdrop ran')
-  $('#success-page-update-alert').alert()
-  $('#success-page-update-alert').fadeTo(1500, 500).slideUp(500, () => {
-    $('#success-page-update-alert').slideUp(500)
+  $('#success-pet-update-alert').alert()
+  $('#success-pet-update-alert').fadeTo(1500, 500).slideUp(500, () => {
+    $('#success-pet-update-alert').slideUp(500)
   })
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
 
 const updatePetsFail = (data) => {
   console.log('update dunt worked')
-  $('#fail-page-update-alert').alert()
-  $('#fail-page-update-alert').fadeTo(1500, 500).slideUp(500, () => {
-    $('#fail-page-update-alert').slideUp(500)
+  $('#fail-pet-update-alert').alert()
+  $('#fail-pet-update-alert').fadeTo(1500, 500).slideUp(500, () => {
+    $('#fail-pet-update-alert').slideUp(500)
   })
   $('html, body').animate({ scrollTop: 0 }, 'fast')
 }
@@ -72,18 +70,11 @@ const removePetSuccess = (data) => {
   console.log('removed pet,', data)
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  $('.page-delete-alert-success').alert()
-  $('.page-delete-alert-success').fadeTo(1500, 500).slideUp(500, () => {
-    $('.page-delete-alert-success').slideUp(500)
+  $('.pet-delete-alert-success').alert()
+  $('.pet-delete-alert-success').fadeTo(1500, 500).slideUp(500, () => {
+    $('.pet-delete-alert-success').slideUp(500)
   })
   $('html, body').animate({ scrollTop: 0 }, 'fast')
-}
-
-const getOthersPagesSuccess = (data) => {
-  const showOthersPagesHtml = showOthersPages({
-    pages: data.pages
-  })
-  $('#all-pages').html(showOthersPagesHtml)
 }
 
 module.exports = {
@@ -94,6 +85,5 @@ module.exports = {
   removePetFail,
   updatePetsSuccess,
   updatePetsFail,
-  removePetSuccess,
-  getOthersPagesSuccess
+  removePetSuccess
 }

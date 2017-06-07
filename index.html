@@ -83,12 +83,18 @@
     <div class='getPuppyForm'>
       <form id="getPuppyForm" class="comment updateComment signedInComment">
         <fieldset>
-          <input type='text' id="NameForm" name='pet[name]' placeholder='Enter Name!'></input>
-          <input type='text' id="SpeciesForm" name='pet[species]' placeholder='Enter Species'></input>
-          <input type='text' id="BreedForm" name='pet[breed]' placeholder='Enter Breed'></input>
+          <input type='text' id="NameForm" name='pet[name]' placeholder='Enter Name!' required></input>
+          <input type='text' id="SpeciesForm" name='pet[species]' placeholder='Enter Species' required></input>
+          <input type='text' id="BreedForm" name='pet[breed]' placeholder='Enter Breed' required></input>
           <input type='text' id="ImageForm" name='pet[image]' placeholder='Enter Image URL'></input>
-          <input type='text' id="bornOnForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)'></input>
-          <input type='text' id="GenderForm" name='pet[gender]' placeholder='Enter Gender'></input>
+          <input type='date' id="bornOnForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)' required></input>
+          <!-- <input type='text' id="GenderForm" name='pet[gender]' placeholder='Enter Gender' required></input> -->
+          <label for="gender">Choose Gender</label>
+          <select id="GenderForm" name='pet[gender]' name='gender'>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+
+          </select>
           <button id="CreatePetButton" type="submit" role="button" class="btn btn-primary CreatePetButton">Create Pet!</button>
         </fieldset>
       </form>
