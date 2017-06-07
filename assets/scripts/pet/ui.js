@@ -1,9 +1,10 @@
 'use strict'
 
-// const store = require('../store')
+const store = require('../store')
 // const api = require('./api')
 // const showItemsTemplate = require('../templates/item-listing-grid.handlebars')
 const showPetsTemplate = require('../templates/get-pets.handlebars')
+const showAllPetsTemplate = require('../templates/get-all-pets.handlebars')
 
 const createPetSuccess = (data) => {
   // clear values in fields
@@ -37,6 +38,19 @@ const getPetsSuccess = (data) => {
       pets: data.pets
     })
     $('#getPetHbDiv').html(showPetsHtml)
+  }
+}
+const getAllPetsSuccess = (data) => {
+  // if logic to handle showing a message to the user if they have posted no blogs
+  if (data.pets.length === 0) {
+    $('#getPetHbDiv').html('You have not added any pets!')
+    // else condition to show blogs
+  } else {
+    const showPetsHtml = showAllPetsTemplate({
+      pets: data.pets
+    })
+    console.log(data)
+    $('#getAllPetHbDiv').html(showPetsHtml)
   }
 }
 const getPetsFailure = (data) => {
@@ -82,5 +96,6 @@ module.exports = {
   removePetFail,
   updatePetsSuccess,
   updatePetsFail,
-  removePetSuccess
+  removePetSuccess,
+  getAllPetsSuccess
 }

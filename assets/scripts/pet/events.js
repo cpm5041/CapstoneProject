@@ -42,7 +42,11 @@ const onCreatePet = function (event) {
       .catch(ui.createPetFailure)
   }
 }
-
+const onGetAllPets = (event) => {
+  api.getAllPets()
+    .then(ui.getAllPetsSuccess)
+    .catch(ui.getAllPetsfailure)
+}
 const onGetPets = (event) => {
   api.getPets()
     .then(ui.getPetsSuccess)
@@ -84,6 +88,7 @@ const onUpdatePet = function (event) {
 const addPetHandlers = () => {
   $('#getPuppyForm').on('submit', onCreatePet)
   $('#showPetsButton').on('click', onGetPets)
+  $('#showAllPetsButton').on('click', onGetAllPets)
   $(document).on('click', '.removePet', onRemovePet)
   $(document).on('submit', '.update-pet', onUpdatePet)
 }

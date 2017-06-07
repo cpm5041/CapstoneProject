@@ -16,14 +16,19 @@ const createPet = (data) => {
 
 const getPets = function () {
   return $.ajax({
-    url: config.apiOrigin + '/pets',
+    url: config.apiOrigin + '/my-pets',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
-
+const getAllPets = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/pets',
+    method: 'GET'
+  })
+}
 const getCurrentUserPages = function () {
   return $.ajax({
     url: config.apiOrigin + '/userpages/' + store.user.id, // "http://book-json.herokuconfig.com/books"
@@ -60,5 +65,6 @@ module.exports = {
   getPets,
   getCurrentUserPages,
   updatePets,
-  removePet
+  removePet,
+  getAllPets
 }

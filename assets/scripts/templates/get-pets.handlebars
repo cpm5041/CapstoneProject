@@ -23,15 +23,15 @@
             <div class="modal-body" data-id="{{pet.id}}">
               <form id='clearUpdatePet'class="update-pet" data-id="{{pet.id}}">
                 <fieldset>
-                  <input type='text' id="NameUpdateForm" name='pet[name]' placeholder='Enter Name' required></input>
+                  Name:<input type='text' id="NameUpdateForm" name='pet[name]' placeholder='Enter Name' required></input>
                   <br>
-                  <input type='text' id="SpeciesUpdateForm" name='pet[species]' placeholder='Enter Species' required></input>
+                  Species<input type='text' id="SpeciesUpdateForm" name='pet[species]' placeholder='Enter Species' required></input>
                   <br>
-                  <input type='text' id="BreedUpdateForm" name='pet[breed]' placeholder='Enter Breed'required></input>
+                  Breed:<input type='text' id="BreedUpdateForm" name='pet[breed]' placeholder='Enter Breed'required></input>
                   <br>
-                  <input type='text' id="ImageUpdateForm" name='pet[image]' placeholder='Enter Image'></input>
+                  Image URL:<input type='text' id="ImageUpdateForm" name='pet[image]' placeholder='Enter Image'></input>
                   <br>
-                  <input type='date' id="bornOnUpdateForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)'required></input>
+                  Birthday:<input type='date' id="bornOnUpdateForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)'required></input>
                   <br>
                   <label for="gender">Choose Gender</label>
                   <select id="GenderUpdateForm" name='pet[gender]' name='gender'>
@@ -40,8 +40,6 @@
 
                   </select>
                   <br>
-
-                  <p class="textarea-notes">*NOTE: Pets.</p>
                   <input data-id="{{pet.id}}" type="submit" name="submit" value="Update Pet">
                 </fieldset>
               </form>
