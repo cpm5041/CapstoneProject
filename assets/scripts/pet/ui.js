@@ -31,25 +31,18 @@ const getPetsSuccess = (data) => {
   const showPetsHtml = showPetsTemplate({
     pets: data.pets
   })
-  console.log('data', data)
   $('#getPetHbDiv').html(showPetsHtml)
-  console.log('get pets success')
 }
 const getPetsFailure = (data) => {
-  console.log('shit didnt work')
 }
 
 const removePetFail = (data) => {
-  console.log('dun work')
 }
 
 const updatePetsSuccess = (data) => {
-  console.log('update worked')
-  console.log('data', data)
   $('.update-pet-modal').modal('toggle')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
-  console.log('modal backdrop ran')
   $('#success-pet-update-alert').alert()
   $('#success-pet-update-alert').fadeTo(1500, 500).slideUp(500, () => {
     $('#success-pet-update-alert').slideUp(500)
@@ -58,7 +51,6 @@ const updatePetsSuccess = (data) => {
 }
 
 const updatePetsFail = (data) => {
-  console.log('update dunt worked')
   $('#fail-pet-update-alert').alert()
   $('#fail-pet-update-alert').fadeTo(1500, 500).slideUp(500, () => {
     $('#fail-pet-update-alert').slideUp(500)
@@ -67,7 +59,6 @@ const updatePetsFail = (data) => {
 }
 
 const removePetSuccess = (data) => {
-  console.log('removed pet,', data)
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   $('.pet-delete-alert-success').alert()

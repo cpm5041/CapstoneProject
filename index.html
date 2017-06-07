@@ -74,10 +74,30 @@
       <!-- BEGIN USER FEEDBACK ALERTS -->
       <div class='userFeedback col-md-12 user-view alerts-container'>
 
-        <!-- BLOG CREATE SUCCESS -->
-        <div class="alert alert-success alert-fixed-top hidden create-success" id="success-pet-create-alert" role="alert">
+        <!-- PET CREATE SUCCESS -->
+        <div class="alert alert-success alert-fixed-top create-success" id="success-pet-create-alert" role="alert">
           <strong>Success!</strong> Pet Added.
         </div>
+        <!-- PET UPDATE SUCCESS -->
+      <div class="alert alert-success alert-fixed-top update-success" id="success-pet-update-alert" role="alert">
+            <strong>Success!</strong> Pet Updated.
+      </div>
+
+      <!-- PET CREATE FAIL -->
+      <div class="alert alert-danger alert-fixed-top create-fail" id="fail-pet-create-alert" role="alert">
+          <strong>Create Pet Failed!</strong> No fields can be blank.
+      </div>
+
+      <!-- PET UPDATE FAIL -->
+      <div class="alert alert-danger alert-fixed-top update-fail" id="fail-pet-update-alert" role="alert">
+          <strong>Update Pet Failed!</strong> No fields can be blank.
+      </div>
+
+      <!-- PET DELETE HAPPENED -->
+      <div class="alert alert-info alert-fixed-top pet-delete-alert-success" role="alert">
+          Pet Was Removed Successfully.
+      </div>
+
       </div>
     </div>
     <div class='getPuppyForm'>

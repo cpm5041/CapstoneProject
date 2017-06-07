@@ -9,6 +9,7 @@ $(() => {
   setAPIOrigin(location, config)
   petEvents.addPetHandlers()
   authEvents.addAuthHandlers()
+  $('.alert').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

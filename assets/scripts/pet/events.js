@@ -62,14 +62,11 @@ const onUpdatePet = function (event) {
   // assign input form fields to data
   const data = getFormFields(event.target)
     // use id to update that page id
-  console.log('update clicked')
   const petId = $(this).attr('data-id')
-  console.log('petId', petId)
-  console.log('data', data)
   api.updatePets(petId, data)
       .done(ui.updatePetsSuccess)
       .catch(ui.updatePetFail)
-      // .done(onGetPets)
+      .done(onGetPets)
 }
 const addPetHandlers = () => {
   $('#getPuppyForm').on('submit', onCreatePet)
