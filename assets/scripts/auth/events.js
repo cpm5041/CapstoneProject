@@ -46,7 +46,10 @@ const onChangePassword = function (event) {
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
-
+const clearModals = function () {
+  $('.form-control').val('')
+  $('.error-clear').text('')
+}
 // event handlers for auth events
 const addAuthHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -59,6 +62,11 @@ const addAuthHandlers = () => {
   $('#change-password-modal-link').on('click', function () {
     $('.change-password-input').val('')
   })
+  $('#sign-in-modal-btn').on('click', function () {
+    $('.sign-up').val('')
+  })
+  $('#sign-in-modal-btn').on('click', clearModals)
+  $('#change-password-modal-link').on('click', clearModals)
 }
 
 module.exports = {

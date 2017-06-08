@@ -54,7 +54,6 @@ const onGetPets = (event) => {
 }
 const onRemovePet = function () {
   event.preventDefault()
-  console.log('remove pet clicked')
   const data = $(this).attr('data-id')
   api.removePet(data)
     .then(ui.removePetSuccess)

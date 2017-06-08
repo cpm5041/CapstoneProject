@@ -76,6 +76,10 @@ const signOutSuccess = () => {
   $('#create-page-form').trigger('reset')
   $('.signedInComment').addClass('hidden')
   $('.signedInDiv').css('display', 'none')
+  $('#fail-pet-update-alert').text('')
+  $('.updateerror').text('')
+  $('#change-password-failure').text('')
+  $('#sign-in-error').text('')
 }
 
 const signOutFailure = (error) => {
