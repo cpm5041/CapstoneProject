@@ -10,14 +10,11 @@ const getStarWars = (data) => {
     characters: data.results
   })
   $('#success').append(showPplHtml)
-  // clear values in fields
-  // $('#success').html(data.results[1].name)
   console.log(data.results[1].name)
 }
 
 const getStarWarsFail = () => {
-  $('#fail').html('shits broke')
-  console.log('shits broke')
+  $('#fail').html(' broke')
 }
 
 module.exports = {

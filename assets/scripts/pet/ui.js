@@ -49,7 +49,6 @@ const getAllPetsSuccess = (data) => {
     const showPetsHtml = showAllPetsTemplate({
       pets: data.pets
     })
-    console.log(data)
     $('#getAllPetHbDiv').html(showPetsHtml)
   }
 }

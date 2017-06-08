@@ -2,7 +2,7 @@
   {{#each pets as |pet|}}
     <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} allHbStyle col-md-12 list-unstyled text-center'>
       <div class='container row '>
-        <div class='col-md-4 nameDiv'>
+        <div class='col-md-4 nameDiv backgroundCss'>
           <h2>Name: {{pet.name}}</h2>
           <p>Species: {{pet.species}}</p>
           <p>Breed: {{pet.breed}}</p>
@@ -16,9 +16,9 @@
           {{/if}}
 
         </div>
-</div>
-<br>
-        <hr>
+      </div>
+      <br>
+      <hr>
 
     </li>
   {{/each}}
