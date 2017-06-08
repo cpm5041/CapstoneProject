@@ -72,6 +72,7 @@ const signOutSuccess = () => {
   $('#getPuppyForm').trigger('reset')
   $('#clearUpdatePet').trigger('reset')
   $('#getPetHbDiv').html('')
+  $('#getAllPetHbDiv').html('')
   $('#create-page-form').trigger('reset')
   $('.signedInComment').addClass('hidden')
   $('.signedInDiv').css('display', 'none')
