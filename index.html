@@ -60,14 +60,49 @@
     </div>
     <!-- END JUMBOTRON -->
     <!-- Get All Pets -->
-    <div class='getAllPets'>
+    <!-- <div class='getAllPets'>
       <button id='showAllPetsButton' type="button" class="getAllPetsButton btn btn-default">View All pets!</button>
       <div id='getAllPetHbDiv' class='container'>
       </div>
-    </div>
-    <!-- About Us -->
-    <div class='aboutUs'>About Puppehs
-    </div>
+    </div> -->
+    <!-- TAB FOR VISITOR BLOGS/PAGES -->
+<div class="visitor-view">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs tabStyle" role="tablist">
+    <li role="presentation" id="tabs" class="active tabStyle"><a id="showBlogButton" href="#recent-blogs" aria-controls="recent-blogs" role="tab" data-toggle="tab">All Pets</a></li>
+    <li role="presentation" class='tabStyle'><a id="showPageButton" href="#recent-pages" aria-controls="recent-pages" role="tab" data-toggle="tab">About</a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane container  visitorDiv visitorBlogDiv2 col-md-12 active visitor-view" id="recent-blogs">Click to see all available pets!
+      <!-- Get All Pets -->
+      <div class='getAllPets'>
+        <button id='showAllPetsButton' type="button" class="getAllPetsButton btn btn-primary">View All pets!</button>
+        <div id='getAllPetHbDiv' class='container'>
+        </div>
+      </div></div>
+    <div role="tabpanel" class="tab-pane text-center container well visitorDiv visitorPageDiv col-md-12 visitor-view" id="recent-pages">
+      <h2>About Us!
+      </h2>
+      <p>The motivation for this was when we were looking for our new family dog (Lucy, below),
+      we noticed some breeder sites were not that visually appealing or functional. I realized there was an opportunity to provide a service to anyone
+        who wanted to list available pets for adoption.
+        <br><br>By using this site, users
+        can add available pets for visitors to view and contact them about. This
+        would be useful for pet owners or breeders who would not have the time or
+        resources to build out a site to list different pets and litters.
+        <br><br>Potential owners could then visit the site to see pets that are still available for adoption.
+        Or just visit the site to view adorable pets, because who doesn't love puppy pics!
+        <br>
+        <img src="http://i.imgur.com/kzDzJuS.jpg" alt="Lucy" style="width:304px;height:304px;">
+
+
+
+      </p>
+      </div>
+  </div>
+
+</div>
     <!-- END Visitor Div -->
   </div>
   <div class='container signedInDiv' style='display:none'>
