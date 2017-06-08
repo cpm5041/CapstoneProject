@@ -1,16 +1,25 @@
 <ul>
   {{#each pets as |pet|}}
     <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} allHbStyle col-md-12 list-unstyled text-center'>
-      <h2>Name: {{pet.name}}</h2>
-      <p>Species: {{pet.species}}</p>
-      <p>Breed: {{pet.breed}}</p>
-      <p>Birthday: {{pet.bornOn}}</p>
-      <p>Gender: {{pet.gender}}</p>
-      <p>For more information, please contact: {{pet.user.email}}</p>
-      {{#if pet.image}}
-      <img src= {{pet.image}} class='petImage img-responsive' alt="Image not found"></img>
-      {{/if}}
-      <hr>
+      <div class='container row '>
+        <div class='col-md-4 nameDiv'>
+          <h2>Name: {{pet.name}}</h2>
+          <p>Species: {{pet.species}}</p>
+          <p>Breed: {{pet.breed}}</p>
+          <p>Birthday: {{pet.bornOn}}</p>
+          <p>Gender: {{pet.gender}}</p>
+          <p>For more information, please contact: {{pet.user.email}}</p>
+        </div>
+        <div class='col-md-6 imageDiv'>
+          {{#if pet.image}}
+            <img src= {{pet.image}} class='petImage img-responsive' alt="Image not found"></img>
+          {{/if}}
+
+        </div>
+</div>
+<br>
+        <hr>
+
     </li>
   {{/each}}
 

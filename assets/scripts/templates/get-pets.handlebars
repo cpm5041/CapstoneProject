@@ -1,56 +1,65 @@
 <ul>
   {{#each pets as |pet|}}
     <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} hbStyle col-md-12 list-unstyled text-center'>
-      <h2>Name: {{pet.name}}</h2>
-      <p>Species: {{pet.species}}</p>
-      <p>Breed: {{pet.breed}}</p>
-      <p>Birthday: {{pet.bornOn}}</p>
-      <p>Gender: {{pet.gender}}</p>
-      {{#if pet.image}}
-      <img src= {{pet.image}} class='petImage img-responsive' alt="Image not found"></img>
-      {{/if}}
-      <!-- Delete Comments -->
-      <br>
-      <button type="button" class="removePet remove-pet btn btn-default handle" data-id="{{pet.id}}">Remove Pet</button>
-      <button type="button" class="updatePet btn btn-primary handle" data-toggle="modal" data-target="#updatepetmodal{{pet.id}}">Update Pet Info</button>
+      <div class='container row '>
+        <div class='col-md-4 nameDiv'>
+          <h2>Name: {{pet.name}}</h2>
+          <p>Species: {{pet.species}}</p>
+          <p>Breed: {{pet.breed}}</p>
+          <p>Birthday: {{pet.bornOn}}</p>
+          <p>Gender: {{pet.gender}}</p>
+        </div>
 
-      <div class="modal fade update-pet-modal" id="updatepetmodal{{pet.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Update Pet Info</h5>
-            </div>
-            <div class="modal-body" data-id="{{pet.id}}">
-              <form id='clearUpdatePet'class="update-pet" data-id="{{pet.id}}">
-                <fieldset>
-                  Name:<input type='text' id="NameUpdateForm" name='pet[name]' placeholder='Enter Name' required></input>
-                  <br>
-                  Species<input type='text' id="SpeciesUpdateForm" name='pet[species]' placeholder='Enter Species' required></input>
-                  <br>
-                  Breed:<input type='text' id="BreedUpdateForm" name='pet[breed]' placeholder='Enter Breed'required></input>
-                  <br>
-                  Image URL:<input type='text' id="ImageUpdateForm" name='pet[image]' placeholder='Enter Image'></input>
-                  <br>
-                  Birthday:<input type='date' id="bornOnUpdateForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)'required></input>
-                  <br>
-                  <label for="gender">Choose Gender</label>
-                  <select id="GenderUpdateForm" name='pet[gender]' name='gender'>
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
+        <div class='col-md-6 imageDiv'>
+          {{#if pet.image}}
+            <img src= {{pet.image}} class='petImage img-responsive' alt="Image not found"></img>
+          {{/if}}
+        </div>
+        <!-- Delete Comments -->
+        <br>
+        <div class='buttonsDiv col-md-12'>
+        <button type="button" class="updatePet btn btn-primary handle" data-toggle="modal" data-target="#updatepetmodal{{pet.id}}">Update Pet Info</button>
+        <button type="button" class="removePet remove-pet btn btn-danger handle" data-id="{{pet.id}}">Remove Pet</button>
 
-                  </select>
-                  <br>
-                  <input data-id="{{pet.id}}" type="submit" name="submit" value="Update Pet">
-                </fieldset>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <div class="updateerror"></div>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <div class="modal fade update-pet-modal" id="updatepetmodal{{pet.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Update Pet Info</h5>
+              </div>
+              <div class="modal-body" data-id="{{pet.id}}">
+                <form id='clearUpdatePet' class="update-pet" data-id="{{pet.id}}">
+                  <fieldset>
+                    Name:<input type='text' id="NameUpdateForm" name='pet[name]' placeholder='Enter Name' required></input>
+                    <br> Species
+                    <input type='text' id="SpeciesUpdateForm" name='pet[species]' placeholder='Enter Species' required></input>
+                    <br> Breed:
+                    <input type='text' id="BreedUpdateForm" name='pet[breed]' placeholder='Enter Breed' required></input>
+                    <br> Image URL:<input type='text' id="ImageUpdateForm" name='pet[image]' placeholder='Enter Image'></input>
+                    <br> Birthday:
+                    <input type='date' id="bornOnUpdateForm" name='pet[bornOn]' placeholder='Enter Date of Birth (YYYY-MM-DD)' required></input>
+                    <br>
+                    <label for="gender">Choose Gender</label>
+                    <select id="GenderUpdateForm" name='pet[gender]' name='gender'>
+               <option value="female">Female</option>
+               <option value="male">Male</option>
+
+             </select>
+                    <br>
+                    <input data-id="{{pet.id}}" type="submit" name="submit" value="Update Pet">
+                  </fieldset>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <div class="updateerror"></div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      </div>
+
       <hr>
     </li>
   {{/each}}
