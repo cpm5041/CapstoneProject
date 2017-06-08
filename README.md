@@ -1,10 +1,71 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# browser-template
+# Client Documentation
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+This is a blog site created by Chris Marcenelle for General Assembly's Capstone Project.
+
+The motivation for this was when we were looking for our new family dog (Lucy, below), we noticed some breeder sites were not that visually appealing or functional. I realized there was an opportunity to provide a service to anyone who wanted to list available pets for adoption.
+
+By using this site, users can add available pets for visitors to view and contact them about. This would be useful for pet owners or breeders who would not have the time or resources to build out a site to list different pets and litters.
+Users can create pets, view all pets submitted by other users, and update or delete their own content.
+Also, when viewing other other's pets, it lists their contact info
+in order to get in touch.
+- [Link to Deployed Application](https://cpm5041.github.io/CapstoneProject/)
+- [Link to API Repo](https://github.com/cpm5041/capstone-api)
+- [Link to API Repo](https://github.com/cpm5041/capstone-api)
+- [Link to Heroku App](https://fathomless-peak-62210.herokuapp.com/)
+
+# Technologies Used
+
+## Dependencies
+Install with `npm install`
+
+- Webpack
+- Bootstrap
+- Handlebars.js
+
+## API
+- Hosted on Heroku
+- Rails
+
+## Client
+- Deployed through GitHub
+
+# Planning
+
+## Stories
+1. As a user I want to be able to sign-up for the application.
+1. As a user I want to be able to sign-in so I can use the application.
+1. As a user I want to be able to change my password so I can update my credentials if needed.
+1. As a user I want to be able to sign-out so I can exit my session of the application.
+1. As a visitor I want to be able to view the content without signing in.
+1. As a user I want to see a dashboard after logging in.
+1. As a user I want to be able to create new pets.
+1. As a user I want to be able to update my pets.
+1. As a user I want to be able to delete my pets.
+1. As a user I want to be able to view my pets.
+![Userstories](https://www.dropbox.com/s/t9osthegcdx1ugg/Photo%20Jun%2005%2C%2011%2013%2057%20AM.jpg?dl=0)
+
+## Wireframes
+
+![Wireframe](https://www.dropbox.com/s/ue3pzde37y8x1qc/Photo%20Jun%2005%2C%2011%2000%2031%20AM.jpg?dl=0)
+![Wireframe](https://www.dropbox.com/s/hwxi0hvjn9sepgd/Photo%20Jun%2005%2C%2011%2000%2025%20AM.jpg?dl=0)
+![Wireframe](https://www.dropbox.com/s/r4yv3fwcschzy7p/Photo%20Jun%2005%2C%2010%2058%2017%20AM.jpg?dl=0)
+
+## ERD
+![ERD](https://www.dropbox.com/s/6od6ckdyfqsumgk/Photo%20Jun%2005%2C%2010%2048%2032%20AM.jpg?dl=0)
+
+## Testing and Issue Management
+ - Planned to wrap up major feature development Wendesday of project week to allow time for testing and bug fixes.
+ - Reviewed code with peers and requested that they test to find this I may have missed.
+ - Spent time at end of everyday testing our most recently deployed code
+
+# Client Challenges and Accomplishments
+Challenges
+- Prework: It was difficult to plan ahead of project week for this as I was working through a project 3 resubmission and had to focus attention accordingly.
+- Framework: I would have liked to tried to incorporate a front end framework, most likely REACT as my team will be using it when I return. By the time I completed MVP functionality, I did not have enough time where I would have felt comfortable implementing a framework.
+- Images: As it stands now, I have it so a user can include an image URL to a hosted image. A nice to have would have been to include the ability to upload picstures.
+
 
 ## Dependencies
 
@@ -71,13 +132,6 @@ Developers should run these often!
 -   `grunt build`: place bundled styles and scripts where `index.html` can find
     them
 
-## Wireframes
-https://www.dropbox.com/s/r4yv3fwcschzy7p/Photo%20Jun%2005%2C%2010%2058%2017%20AM.jpg?dl=0
-https://www.dropbox.com/s/hwxi0hvjn9sepgd/Photo%20Jun%2005%2C%2011%2000%2025%20AM.jpg?dl=0
-https://www.dropbox.com/s/ue3pzde37y8x1qc/Photo%20Jun%2005%2C%2011%2000%2031%20AM.jpg?dl=0
-
-## User Stories
-https://www.dropbox.com/s/t9osthegcdx1ugg/Photo%20Jun%2005%2C%2011%2013%2057%20AM.jpg?dl=0
 
 ## [License](LICENSE)
 
