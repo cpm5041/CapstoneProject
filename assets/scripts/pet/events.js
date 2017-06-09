@@ -40,6 +40,7 @@ const onCreatePet = function (event) {
     api.createPet(data)
       .then(ui.createPetSuccess)
       .catch(ui.createPetFailure)
+      .done(onGetPets)
   }
 }
 const onGetAllPets = (event) => {

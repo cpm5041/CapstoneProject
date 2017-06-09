@@ -96,7 +96,9 @@ const changePasswordSuccess = (data) => {
 
 const changePasswordFailure = (error) => {
   // notify user of unsuccessful password change with message
-  $('#change-password-failure').text('You may have an invalid password, please try again.')
+  $('#change-password-failure-error').text('You may have an invalid password, please try again.')
+  $('#old-password').val('')
+  $('#new-password').val('')
 }
 
 module.exports = {
